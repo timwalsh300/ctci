@@ -18,16 +18,15 @@ void print_matrix(int **m, int x, int y)
 
 int main(void)
 {
-    unsigned char buffer[1];
-    int fd = open("/dev/urandom", O_RDONLY);
+    unsigned char buffer[4];
+    FILE *fp = fopen("/dev/urandom", "r");
 
     // initialize matrix with random input
-    read(fd, buffer, 1);
+    fgets(buffer, 4, fp);
     int rows = (((int) *buffer) % 32) + 2;
-    read(fd, buffer, 1);
+    fgets(buffer, 4, fp);
     int columns = (((int) *buffer) % 32) + 2;
-    int **matrix;
-    matrix = malloc(rows * sizeof(int *));
+    int **matrix; matrix = malloc(rows * sizeof(int *));
     for (int i = 0; i < rows; i++) {
         matrix[i] = malloc(columns * sizeof(int));
     }
@@ -35,7 +34,7 @@ int main(void)
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
             // assign 0 with probability 0.1
-            read(fd, buffer, 1);
+            fgets(buffer, 4, fp);
             int val = ((int) *buffer) % 10;
             if (val == 0) {
                 matrix[i][j] = 0;
@@ -44,6 +43,7 @@ int main(void)
             }
         }
     }
+    fclose(fp);
 
     printf("input matrix...\n\n");
     print_matrix(matrix, rows, columns);
