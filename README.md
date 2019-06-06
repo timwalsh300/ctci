@@ -69,4 +69,5 @@ single digit. The digits are stored in reverse order, such that the 1's digit is
 the head of the list. Write a function that adds the two numbers and returns the sum
 as a linked list.
 
-2.6: Write a function to check if a linked list is a palindrome.
+2.6: Write a function to check if a linked list is a palindrome. My solution takes
+O(n)-time and O(n)-space.
