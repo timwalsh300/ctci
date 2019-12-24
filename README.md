@@ -71,3 +71,19 @@ as a linked list.
 
 2.6: Write a function to check if a linked list is a palindrome. My solution takes
 O(n)-time and O(n)-space.
+
+2.7: Given two singly-linked lists, determine if the two lists intersect. Return the
+intersecting node. Note that the intersection is defined based on reference, not
+value. My solution takes O(1)-space and O(n)-time to store all the memory addresses
+of the first list in a hash table, and then check for duplicates while iterating
+through the second list. There is some low probability of a false positive because
+I rely on a big hash table to avoid collisions rather than actually handling
+collisions. Given lists of size 2^4 nodes, putting them in a hash table of size
+2^8 would result in a ~50% chance of collision per the birthday paradox. I chose a
+hash table of size 2^10. Alternatively, I could use a binary search tree that would
+take O(n)-space and O(n log n)-time, but guarantee no false positives.
+
+3.1: Use a single array to implement three stacks.
+
+3.2: Design a stack with a min() function that returns the minimum element. push(),
+pop(), and min() should all take O(1)-time.
