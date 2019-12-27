@@ -83,6 +83,8 @@ collisions. Given lists of size 2^4 nodes, putting them in a hash table of size
 hash table of size 2^10. Alternatively, I could use a binary search tree that would
 take O(n)-space and O(n log n)-time, but guarantee no false positives.
 
+Chapter 3... Stacks and Queues
+
 3.1: Use a single array to implement three stacks.
 
 3.2: Design a stack with a min() function that returns the minimum element. push(),
