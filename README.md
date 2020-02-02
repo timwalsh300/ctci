@@ -108,3 +108,13 @@ single stack. Then implement a function pop_at(int index) which pops
 from a specific substack.
 
 3.4: Implement a queue using two stacks.
+
+3.5: Implement a sorted stack, like a min heap, using only one other 
+stack as a temporary data structure. Another interpretation of this 
+question is to take a stack that is unsorted, and then sort it, but I 
+chose to insert items in a sorted order.
+
+3.6: Implement an animal shelter for cats and dogs that operates on a 
+first-in-first-out basis. People can adopt the pet of their choice (cat 
+or dog) nearest to the front of the queue, or whatever pet is at the 
+front regardless of species.
